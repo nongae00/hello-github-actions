@@ -1,8 +1,8 @@
 name: A workflow for my Hello World file
-on: push
-#  push:
-#    branches:
-#    - master                  # master 브랜치에 푸시가 들어왔을 때 이 Workflow를 실행시키겠다는 의미
+on: #push
+  push:
+    branches:
+    - master                  # master 브랜치에 푸시가 들어왔을 때 이 Workflow를 실행시키겠다는 의미
 #    tags:
 #     - v1
 #    paths:
@@ -27,7 +27,7 @@ jobs:
       - run: npm install
 #      - run: npm run eslint
 
-      - run: docker build -t hyunflix/frontend .
-      - run: docker save -o hyunflix-frontend.tar hyunflix/frontend
+#      - run: docker build -t hyunflix/frontend .
+#      - run: docker save -o hyunflix-frontend.tar hyunflix/frontend
     
 
