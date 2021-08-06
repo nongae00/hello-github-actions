@@ -12,13 +12,13 @@ inputs:
     required: true
     default: 'World'
     
-#runs:
-#  using: "docker"
-#  image: "Dockerfile"
-
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: "docker"
+  image: "Dockerfile"
+
+#runs:
+#  using: 'node12'
+#  main: 'index.js'
   
 branding:
   icon: "code"                  #"mic"
