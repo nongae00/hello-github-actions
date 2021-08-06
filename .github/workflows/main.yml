@@ -10,8 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello world action step
-        uses: actions/checkout@v1
-      - uses: ./action-a
-        with:
-          MY_NAME: "Mona"
+        uses: actions/checkout@v1   # action : 다른 사람들이 만들어 놓은 명령어들의 모음
+     # - uses: ./action-a
+     #   with:
+     #     MY_NAME: "Mona"
           
+      - uses: actions/setup-node@v1
+      - uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+      - run: npm install
+      - run: npm run eslint
