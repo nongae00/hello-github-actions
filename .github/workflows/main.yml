@@ -22,3 +22,7 @@ jobs:
           key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
       - run: npm install
       - run: npm run eslint
+
+      - run: docker build -t hyunflix/frontend .
+      - run: docker save -o hyunflix-frontend.tar hyunflix/frontend
+    
